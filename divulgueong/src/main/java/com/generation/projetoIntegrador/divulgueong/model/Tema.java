@@ -26,7 +26,7 @@ public class Tema {
  @Size(min = 5, max = 255)
  private String ong;
  
- @NotBlank (message = "preenchimento obrigatório")
+ 
  @Size(min = 5, max = 255)
  private String governo;
 
