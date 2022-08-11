@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.generation.projetoIntegrador.divulgueong.Repository.UsuarioRepository;
+import com.generation.projetoIntegrador.divulgueong.Service.UsuarioService;
 import com.generation.projetoIntegrador.divulgueong.model.Usuario;
 import com.generation.projetoIntegrador.divulgueong.model.UsuarioLogin;
 
@@ -54,7 +55,7 @@ public class UsuarioController {
 	
 	@GetMapping("/cadastrar")
 	public ResponseEntity<Usuario> postUsuario
-	(@RequestBody @Valid Optional<Usuario> usuario){
+	(@RequestBody @Valid Usuario usuario){
 		return service.cadastrarUsuario(usuario)
 				.map(resposta -> ResponseEntity.status(HttpStatus.CREATED).body(resposta))
 				.orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
