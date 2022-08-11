@@ -35,20 +35,11 @@ public class Usuario {
 	private String senha;
 	
 	@NotBlank (message = "preenchimento obrigatório")
-	private String tipoUsuario;
+	private String usuario;
 	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
-
-	
-	public List<Postagem> getPostagem() {
-		return postagem;
-	}
-
-	public void setPostagem(List<Postagem> postagem) {
-		this.postagem = postagem;
-	}
 
 	public Long getId() {
 		return id;
@@ -82,13 +73,23 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public String getTipoUsuario() {
-		return tipoUsuario;
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setTipoUsuario(String tipoUsuario) {
-		this.tipoUsuario = tipoUsuario;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
+
+	public List<Postagem> getPostagem() {
+		return postagem;
+	}
+
+	public void setPostagem(List<Postagem> postagem) {
+		this.postagem = postagem;
+	}
+
+	
 	
 	
 }
