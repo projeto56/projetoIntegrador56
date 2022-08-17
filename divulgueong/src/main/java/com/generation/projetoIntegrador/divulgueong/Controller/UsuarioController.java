@@ -23,7 +23,7 @@ import com.generation.projetoIntegrador.divulgueong.model.Usuario;
 import com.generation.projetoIntegrador.divulgueong.model.UsuarioLogin;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/usuarios")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioController {
 
@@ -46,7 +46,7 @@ public class UsuarioController {
 				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	}
 	
-	@GetMapping("/logar")
+	@PostMapping("/logar")
 	public ResponseEntity<UsuarioLogin> authentificationUsuario
 	(@RequestBody Optional<UsuarioLogin> usuario){
 		return service.logarUsuario(usuario)

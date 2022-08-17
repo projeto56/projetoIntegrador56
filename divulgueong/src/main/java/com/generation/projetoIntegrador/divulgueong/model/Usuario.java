@@ -9,7 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -31,10 +33,11 @@ public class Usuario {
 	private String login;
 	
 	@NotBlank (message = "preenchimento obrigatório")
-	@Size(min = 8, max = 50)
+	@Size(min = 8, message = "A senha deve ter no minimo 8 caracteres")
 	private String senha;
 	
-	@NotBlank (message = "preenchimento obrigatório")
+	@NotNull(message = "preenchimento obrigatório")
+	@Email(message = "O atributo usuário deve ser um email válido")
 	private String usuario;
 	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
