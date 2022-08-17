@@ -18,10 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> b62f976bebad89e9028d090a8cb71cc1b0313285
 @Entity
 @Table (name = "tb_usuarios")
 public class Usuario {
@@ -43,13 +40,8 @@ public class Usuario {
 	private String senha;
 	
 	@Schema(example = "email@email.com.br")
-<<<<<<< HEAD
-	@NotNull(message = "O atributo Usuário é Obrigatório!")
-	@Email(message = "O atributo Usuário deve ser um email válido!")
-=======
 	@NotNull(message = "preenchimento obrigatório")
 	@Email(message = "O atributo usuário deve ser um email válido")
->>>>>>> b62f976bebad89e9028d090a8cb71cc1b0313285
 	private String usuario;
 	
 	
